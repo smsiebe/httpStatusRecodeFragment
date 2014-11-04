@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-fragment metadata-complete="true" version="3.0" 
+              xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-fragment_3_0.xsd">
+    <name>HttpStatusCodeConverter</name>
+    <filter>
+        <filter-name>HttpStatusCodeFilter</filter-name>
+        <filter-class>net.stackoverflow.HttpStatusCodeConverter</filter-class>
+        <init-param>
+            <param-name>502</param-name>
+            <param-value>403</param-value>
+        </init-param>
+        <init-param>
+            <param-name>405</param-name>
+            <param-value>403</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>HttpStatusCodeFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+</web-fragment>
